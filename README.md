@@ -121,6 +121,10 @@ nope.
 
 Write a function that given the input string `name`, returns the greeting statement `Hello, <name> how are you doing today?`
 
+##### Difficulty - :green_heart: 
+##### Topics - `Template literal`
+##### Companies - NA
+
 ```js
 const greet = name => {
   //Your solution
@@ -169,6 +173,77 @@ const century = year => {
 };
 ```
 
+</details>
+
+---
+
+**[⬆ Back to Top](#javascript-interview-code-challenges)**
+
+## 6. Flatten the nested Array.
+
+How to create a flat version of a deeply nested array?
+
+##### Difficulty - :heart: 
+##### Topics - `Recursion`
+##### Companies - `ADOBE`
+
+```js
+function flatten(list) {
+  // Your solution
+};
+
+var input = [
+  1, 2, 3,
+   [4],
+  [5, 6, [7], [8, [9, [10]]]],
+  11, 12, 13,
+  [14, [[[[[15, [16]]]]]]],
+  17, 18,
+  [19, [20, [21, [22, [23, [24, [[[[[25]]]]]]]]]]]
+ ];
+console.log(flatten(input));
+```
+
+**Output**
+[
+   1,  2,  3,  4,  5,  6,  7,  8,
+   9, 10, 11, 12, 13, 14, 15, 16,
+  17, 18, 19, 20, 21, 22, 23, 24,
+  25
+]
+
+<details><summary>Solution</summary>
+
+```js
+const flattenList = [];
+
+function flatten(list) {
+  
+  for (let i = 0; i < list.length; i++) {
+    if (Array.isArray(list[i])) {
+      flatten(list[i]);
+
+    } else {
+      flattenList.push(list[i]);
+    }
+  }
+  return flattenList;
+}
+
+var input = [
+  1, 2, 3,
+   [4],
+  [5, 6, [7], [8, [9, [10]]]],
+  11, 12, 13,
+  [14, [[[[[15, [16]]]]]]],
+  17, 18,
+  [19, [20, [21, [22, [23, [24, [[[[[25]]]]]]]]]]]
+ ];
+console.log(flatten(input));
+```
+**Explain:**
+
+nope.
 </details>
 
 ---
