@@ -249,3 +249,94 @@ nope.
 ---
 
 **[⬆ Back to Top](#javascript-interview-code-challenges)**
+
+
+## 7. Find the output.
+
+What will be the output of the below code?
+
+##### Difficulty - :heart: 
+##### Topics - `Scoping`
+##### Companies - `FRESHWORKS`
+
+```js
+function createFunc() {
+	  const name = [1,2,3];
+	  const nameFunc = []; 
+	  for(var i=0; i < name.length ; i++){ 
+	    nameFunc.push(function(){
+	      console.log(name[i]);
+	    })
+	  }
+	  return nameFunc;
+	};
+	const config = createFunc();
+	config[0](); 
+```
+
+<details><summary>Solution</summary>
+
+```js
+undefined
+```
+**Explain:**
+
+nope.
+</details>
+
+---
+
+**[⬆ Back to Top](#javascript-interview-code-challenges)**
+
+
+## 8. Sleep timer.
+
+Write a sleep function to make the execution sleep for given time?
+
+##### Difficulty - :heart: 
+##### Topics - `Promises`
+##### Companies - `FRESHWORKS`
+
+```js
+const sleep = (time) => {
+    // write code
+}
+
+const sayHello = async () => {
+    console.log("Starts");
+    await sleep(4);
+    console.log("Hello there");
+}
+sayHello();
+```
+
+<details><summary>Solution</summary>
+
+```js
+const sleep = (time) => {
+    // write code
+    return new Promise( function(resolve, reject){
+        setTimeout(function() {
+        resolve(true)
+      }, time*1000);
+    });
+}
+
+const sayHello = async () => {
+    console.log("Starts");
+    await sleep(4);
+    console.log("Hello there");
+}
+sayHello();
+```
+**Explain:**
+
+nope.
+</details>
+
+---
+
+**[⬆ Back to Top](#javascript-interview-code-challenges)**
+
+
+
